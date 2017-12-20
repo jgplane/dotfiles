@@ -42,6 +42,10 @@ set statusline +=%2*%m%*       " modified flag
 set statusline +=%1*%=%5l%*    " current line
 set statusline +=%2*/%L%*      " total lines
 set statusline +=%1*%4v\ %*    " virtual column number
+hi User1 ctermbg=246 ctermfg=233
+hi User2 ctermbg=246 ctermfg=233
+hi User3 ctermbg=246 ctermfg=233
+hi User4 ctermbg=246 ctermfg=233
 
 
 " ========== Keybindings ======================================================
@@ -57,6 +61,7 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
 
 " ========== Functions =======================================================
 
