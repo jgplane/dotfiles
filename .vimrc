@@ -56,6 +56,13 @@ set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
 set wildignore+=tags
 set wildignore+=*.tar.*
 
+" centralize swap, backup and undo files
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
+
 " ========== Keybindings ======================================================
 
 nnoremap ;             :
