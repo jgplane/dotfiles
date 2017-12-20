@@ -47,6 +47,14 @@ hi User2 ctermbg=246 ctermfg=233
 hi User3 ctermbg=246 ctermfg=233
 hi User4 ctermbg=246 ctermfg=233
 
+" wild
+set wildmenu
+set wildmode=list:full
+set wildignorecase
+set wildignore=*.swp,*.bak
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=tags
+set wildignore+=*.tar.*
 
 " ========== Keybindings ======================================================
 
