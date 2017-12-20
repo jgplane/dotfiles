@@ -62,6 +62,8 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" finding files
+nnoremap <leader>p :find <C-R>=expand('%:h').'/*'<CR>
 
 " ========== Functions =======================================================
 
