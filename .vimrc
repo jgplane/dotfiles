@@ -70,6 +70,7 @@ nnoremap <ENTER>       gf
 nnoremap <BS>          <C-O>
 nnoremap <silent><C-l> :nohl<CR><C-l>
 nnoremap gb            :ls<CR>:b<Space> 
+inoremap jf            <esc>
 
 " disable arrow keys
 noremap <Up> <Nop>
