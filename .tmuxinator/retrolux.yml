@@ -1,0 +1,17 @@
+# ~/.tmuxinator/retrolux.yml
+
+name: retrolux 
+root: ~/Desktop/src/retrolux
+
+startup_window: shell
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - rails s
+        - bundle exec rake jobs:work
+  - console: rails c
+  - shell: git branch
+  - vim: vim  
+

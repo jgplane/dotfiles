@@ -1,0 +1,16 @@
+# ~/.tmuxinator/retrolux-mobile.yml   
+ 
+name: retrolux-mobile 
+root: ~/Desktop/src/RetroluxMobile
+
+startup_window: server 
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - npm start 
+        - react-native run-ios 
+  - shell: git status 
+  - vim: vim  
+
