@@ -17,6 +17,7 @@ set expandtab                    " tab inserts 4 spaces
 set textwidth  =0                " turn of auto insert new line
 set wrapmargin =0
 set path       =.,**
+set cursorline
 
 " highlight the 81st column
 hi ColorColumn ctermbg=234
