@@ -18,7 +18,12 @@ export PS1='\[\e[1;30m\]\n[\W] $\[\e[0m\] '
 #                                    ALIASES                                   #
 ################################################################################
 
-alias rnri='react-native run-ios --simulator="iPad Pro (9.7 inch)"'
+# Movement
+alias cd..='cd ../'     # Go back 1 directory level 
+alias ..='cd ../'       # Go back 1 directory level
+alias ...='cd ../../'   # Go back 2 directory levels
+alias ~="cd ~"          # Go Home
+alias ll='ls -hA1'      # Preferred 'ls' implementation
 
 # Tmuxinator
 alias txr='tmuxinator retrolux'
