@@ -19,10 +19,6 @@ set wrapmargin =0
 set path       =.,**
 set cursorline
 
-" highlight the 81st column
-hi ColorColumn ctermbg=234
-set colorcolumn=81
-
 " always show line numbers, but only in current window.
 set number
 :au WinEnter * :setlocal number
