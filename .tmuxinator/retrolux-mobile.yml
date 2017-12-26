@@ -1,7 +1,7 @@
 # ~/.tmuxinator/retrolux-mobile.yml   
  
 name: retrolux-mobile 
-root: ~/Desktop/src/RetroluxMobile
+root: ~/src/RetroluxMobile
 
 startup_window: server 
 

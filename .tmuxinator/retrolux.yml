@@ -1,7 +1,7 @@
-# ~/.tmuxinator/retrolux.yml
+#~/.tmuxinator/retrolux.yml
 
 name: retrolux 
-root: ~/Desktop/src/retrolux
+root: ~/src/retrolux
 
 startup_window: shell
 
