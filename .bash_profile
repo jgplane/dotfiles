@@ -59,3 +59,14 @@ alias gfs='git flow feature start'
 alias gfp='git flow feature publish'
 alias gff='git flow feature finish'
 
+
+################################################################################
+#                                    FUNCTIONS                                 #
+################################################################################
+
+# Create a new memex quote from anywhere based on the template
+function memex() {
+  cp ~/doc/memex/quotes/_template.md ~/doc/memex/quotes/$1.md
+  vim ~/doc/memex/quotes/$1.md
+}
+
