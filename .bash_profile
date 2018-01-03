@@ -59,6 +59,8 @@ alias gfs='git flow feature start'
 alias gfp='git flow feature publish'
 alias gff='git flow feature finish'
 
+# Rake
+alias rtest='TESTOPTS="--fail-fast" rake test'
 
 ################################################################################
 #                                    FUNCTIONS                                 #
