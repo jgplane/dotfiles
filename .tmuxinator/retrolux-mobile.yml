@@ -10,7 +10,7 @@ windows:
       layout: main-vertical
       panes:
         - npm start 
-        - react-native run-ios 
+        - react-native run-ios --simulator="iPad Pro (9.7-inch)"
   - shell: git status 
   - vim: vim  
 

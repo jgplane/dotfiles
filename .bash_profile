@@ -13,6 +13,11 @@ export PS1='\[\e[1;30m\]\n[\W] $\[\e[0m\] '
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
+# ANDROID DEVELOPMENT
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ################################################################################
 #                                    ALIASES                                   #
