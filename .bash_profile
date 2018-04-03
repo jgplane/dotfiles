@@ -34,6 +34,7 @@ alias ll='ls -hA1'      # Preferred 'ls' implementation
 alias txr='tmuxinator retrolux'
 alias txrm='tmuxinator retrolux-mobile'
 alias txa='tmuxinator admin'
+alias txk='tmux kill-session'
 
 # Git
 alias glog='git log --graph --decorate'
