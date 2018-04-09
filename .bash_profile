@@ -77,9 +77,8 @@ alias rtest='TESTOPTS="--fail-fast" rake test'
 # "Ignoring GEM_NAME because its extensions are not built."
 function sv() {
   IFS=', ' read -r -a array <<< "$(rvm current)"
-  CURRENT_VERSION="${array[0]}"
+  current_version="${array[0]}"
   rvm use system
-  vim
-  rvm use $CURRENT_VERSION
+  vim & rvm use $current_version && fg
 }
 
