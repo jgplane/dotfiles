@@ -72,9 +72,14 @@ alias rtest='TESTOPTS="--fail-fast" rake test'
 #                                    FUNCTIONS                                 #
 ################################################################################
 
-# Create a new memex quote from anywhere based on the template
-function memex() {
-  cp ~/doc/memex/quotes/_template.md ~/doc/memex/quotes/$1.md
-  vim ~/doc/memex/quotes/$1.md
+# Opens vim with the system version of Ruby, then switches back to current RVM version.
+# Avoids the following error when using Command-T vim plugin:
+# "Ignoring GEM_NAME because its extensions are not built."
+function sv() {
+  IFS=', ' read -r -a array <<< "$(rvm current)"
+  CURRENT_VERSION="${array[0]}"
+  rvm use system
+  vim
+  rvm use $CURRENT_VERSION
 }
 
