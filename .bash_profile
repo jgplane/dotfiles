@@ -76,8 +76,7 @@ alias rtest='TESTOPTS="--fail-fast" rake test'
 # Avoids the following error when using Command-T vim plugin:
 # "Ignoring GEM_NAME because its extensions are not built."
 function sv() {
-  IFS=', ' read -r -a array <<< "$(rvm current)"
-  current_version="${array[0]}"
+  read -r -a current_version <<< "$(rvm current)"
   rvm use system
   vim & rvm use $current_version && fg
 }
