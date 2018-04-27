@@ -68,6 +68,8 @@ nnoremap <BS>          <C-O>
 nnoremap <silent><C-l> :nohl<CR><C-l>
 nnoremap gb            :ls<CR>:b<Space> 
 inoremap jf            <esc>
+nnoremap <silent> <leader>] :cnext<CR>
+nnoremap <silent> <leader>[ :cprevious<CR>
 
 " disable arrow keys
 noremap <Up> <Nop>
@@ -108,3 +110,6 @@ set conceallevel=2
 " easy align 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" fugitive
+nnoremap <Leader>gg :Ggrep<Space>
