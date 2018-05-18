@@ -113,3 +113,4 @@ nmap ga <Plug>(EasyAlign)
 
 " fugitive
 nnoremap <Leader>gg :Ggrep<Space>
+nnoremap <Leader>gb :Gblame<CR>
