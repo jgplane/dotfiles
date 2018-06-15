@@ -4,8 +4,8 @@ let mapleader=","
 
 filetype plugin indent on
 syntax on
-colo wintermute
 set background=dark
+colo wintermute
 
 set nocompatible
 set nowrap
@@ -67,7 +67,8 @@ nnoremap <ENTER>       gf
 nnoremap <BS>          <C-O>
 nnoremap <silent><C-l> :nohl<CR><C-l>
 nnoremap gb            :ls<CR>:b<Space> 
-inoremap jf            <esc>
+inoremap jj            <Esc>
+
 nnoremap <silent> <leader>] :cnext<CR>
 nnoremap <silent> <leader>[ :cprevious<CR>
 
@@ -77,8 +78,10 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" finding files
-nnoremap <leader>p :find <C-R>=expand('%:h').'/*'<CR>
+" tell me the syntax highlighting group at the cursor
+map <leader>sy :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " ========== Functions =======================================================
 
@@ -90,11 +93,11 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre *.js,*.rb :call <SID>StripTrailingWhitespaces()
 
-
 " ========== Plugins ==========================================================
 
 " plugin management
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " markdown
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -114,3 +117,10 @@ nmap ga <Plug>(EasyAlign)
 " fugitive
 nnoremap <Leader>gg :Ggrep<Space>
 nnoremap <Leader>gb :Gblame<CR>
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/doc/code_wiki', 'syntax': 'markdown', 'ext': '.md'},
+          \ {'path': '~/doc/.planette', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_hl_cb_checked = 2
+let g:vimwiki_ext2syntax = {'.md': 'markdown'}
+
