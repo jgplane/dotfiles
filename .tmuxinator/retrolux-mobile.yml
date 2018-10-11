@@ -7,7 +7,7 @@ startup_window: server
 
 windows:
   - server:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         - npm start 
         - react-native run-ios --simulator="iPad Pro (9.7-inch)"

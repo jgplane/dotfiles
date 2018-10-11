@@ -14,4 +14,4 @@ windows:
   - console: rails c
   - shell: git branch
   - vim: sv
-
+  - guard: guard
