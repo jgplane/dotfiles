@@ -72,6 +72,8 @@ inoremap jj            <Esc>
 nnoremap <silent> <leader>] :cnext<CR>
 nnoremap <silent> <leader>[ :cprevious<CR>
 
+nnoremap <silent> <leader>t :CtrlP<CR>
+
 " disable arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>

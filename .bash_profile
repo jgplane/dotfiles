@@ -1,12 +1,4 @@
 ################################################################################
-#                                   EXPORTS                                    #
-################################################################################
-
-export PATH=/usr/local/bin:$PATH
-
-# Bash Prompt
-export PS1='\[\e[1;30m\]\n[\W] $\[\e[0m\] '
-
 # Load the default .profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" 
 
@@ -18,9 +10,14 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# export PS1='[\W] $ '
+
 ################################################################################
 #                                    ALIASES                                   #
 ################################################################################
+
+# Defaults
+alias yardoc="yardoc 'app/**/*.rb' -c --private --protected"
 
 # Movement
 alias cd..='cd ../'     # Go back 1 directory level 
