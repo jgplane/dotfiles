@@ -1,6 +1,6 @@
 __Adding to a New Machine__
 
-Double check that you won't be overwriting anything important (in .bashrc, et al)
+Double check that you won't be overwriting anything important (in .bash_profile, et al)
 ```
 cd ~
 git clone --bare git@github.com:jgplane/dotfiles.git
