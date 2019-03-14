@@ -8,3 +8,6 @@ Session.vim
 # Mac
 .DS_Store
 
+# Dir used for personal files in many repos
+.jackworks
+
