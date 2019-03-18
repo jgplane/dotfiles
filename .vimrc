@@ -25,8 +25,8 @@ set number
 :au WinLeave * :setlocal nonumber
 
 " automatically resize vertical splits.
-:au WinEnter * :set winfixheight
-:au WinEnter * :wincmd =
+" :au WinEnter * :set winfixheight
+" :au WinEnter * :wincmd =
 
 " status line
 set laststatus =2              " always show status line
@@ -79,6 +79,12 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" keymap for resizing split windows
+map <left> :5winc ><CR>
+map <right> :5winc <<CR>
+map <down> :5winc +<CR>
+map <up> :5winc -<CR>
 
 " tell me the syntax highlighting group at the cursor
 map <leader>sy :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
