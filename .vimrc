@@ -1,5 +1,3 @@
-" ========== General Config ===================================================
-
 let mapleader=","
 
 filetype plugin indent on
@@ -17,6 +15,7 @@ set expandtab                    " tab inserts 4 spaces
 set textwidth  =0                " turn of auto insert new line
 set wrapmargin =0
 set path       =.,**
+
 set cursorline
 
 " always show line numbers, but only in current window.
@@ -80,6 +79,12 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" uncomment temporarily to learn better navigation 
+noremap h <Nop>
+noremap j <Nop>
+noremap k <Nop>
+noremap l <Nop>
+
 " keymap for resizing split windows
 map <left> :5winc ><CR>
 map <right> :5winc <<CR>
@@ -127,8 +132,7 @@ nnoremap <Leader>gg :Ggrep<Space>
 nnoremap <Leader>gb :Gblame<CR>
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/doc/code_wiki', 'syntax': 'markdown', 'ext': '.md'},
-          \ {'path': '~/doc/.planette', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/code_wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_ext2syntax = {'.md': 'markdown'}
 

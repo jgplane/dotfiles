@@ -61,8 +61,7 @@ alias rtest='TESTOPTS="--fail-fast" rake test'
 ################################################################################
 
 # Open vim with the system Ruby version, then switch back to prior version.
-# Avoids the following error when using Command-T vim plugin:
-# "Ignoring GEM_NAME because its extensions are not built."
+# Avoids error with Command-T vim plugin
 function sv() {
   current_version=($(rvm current))
   rvm use system ; vim & rvm use $current_version && fg
