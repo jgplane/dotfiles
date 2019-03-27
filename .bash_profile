@@ -67,17 +67,21 @@ function sv() {
   rvm use system ; vim & rvm use $current_version && fg
 }
 
-# Takes one argument from command line (Jira ticket number)
-# Looks for which vim-wiki diary entries match the argument
-# Example:
+# Takes one argument from command line and returns the vim-wiki diary entries
+# that match.
+#
+# Examples:
 #   $ worked_on RCD-1939
+#   $ worked_on "broken tests"
 function worked_on() {
   paths=(`egrep -lir "($1)" ~/code_wiki/diary`)
+  echo '---'
   for i in "${paths[@]}"
   do 
     file="$(basename $i)"
     echo "${file%.*}"
   done
+  echo '---'
 }
 
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
