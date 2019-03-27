@@ -75,7 +75,8 @@ function worked_on() {
   paths=(`egrep -lir "($1)" ~/code_wiki/diary`)
   for i in "${paths[@]}"
   do 
-    echo $(basename $i)
+    file="$(basename $i)"
+    echo "${file%.*}"
   done
 }
 
