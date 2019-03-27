@@ -80,10 +80,10 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " uncomment temporarily to learn better navigation 
-noremap h <Nop>
-noremap j <Nop>
-noremap k <Nop>
-noremap l <Nop>
+" noremap h <Nop>
+" noremap j <Nop>
+" noremap k <Nop>
+" noremap l <Nop>
 
 " keymap for resizing split windows
 map <left> :5winc ><CR>
@@ -104,7 +104,7 @@ function! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-autocmd BufWritePre *.js,*.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.yml,*.js,*.rb :call <SID>StripTrailingWhitespaces()
 
 " ========== Plugins ==========================================================
 
