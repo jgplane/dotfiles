@@ -19,10 +19,10 @@ alias ~="cd ~"          # Go Home
 alias ll='ls -hA1'      # Preferred 'ls' implementation
 
 # Tmuxinator
+alias txk='tmux kill-session'
+alias tcc='tmuxinator coverhound-commercial'
 alias txr='tmuxinator retrolux'
 alias txrm='tmuxinator retrolux-mobile'
-alias txa='tmuxinator admin'
-alias txk='tmux kill-session'
 
 # Git
 alias glog='git log --graph --decorate'
@@ -76,7 +76,9 @@ function sv() {
 function worked_on() {
   paths=(`egrep -lir "($1)" ~/code_wiki/diary`)
   echo '---'
-  for i in "${paths[@]}"
+  sortedpaths=($(echo ${paths[*]}| tr " " "\n" | sort -n -r))
+
+  for i in "${sortedpaths[@]}"
   do 
     file="$(basename $i)"
     echo "${file%.*}"
@@ -85,3 +87,21 @@ function worked_on() {
 }
 
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
+# Coverhound
+###############################################################################
+
+# In your shell configuration, eg: .bashrc
+
+# Allows brew installed programs like git to take precedence
+# over system installs
+export PATH="/usr/local/bin:$PATH"
+
+eval "$(rbenv init -)"  # initializes rbenv
+eval "$(nodenv init -)" # initializes nodenv
+
+# Identifies your CoverHound admin / advisor / employee email for development
+export CH_USER="jack.plane@coverhound.com"
+
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

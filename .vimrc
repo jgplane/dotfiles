@@ -1,9 +1,14 @@
 let mapleader=","
 
+" plugin management
+execute pathogen#infect()
+execute pathogen#helptags()
+
 filetype plugin indent on
 syntax on
 set background=dark
-colo wintermute
+" colo wintermute
+colo gruvbox
 
 set nocompatible
 set nowrap
@@ -31,7 +36,6 @@ set number
 set laststatus =2              " always show status line
 set noruler                    " remove ruler
 set statusline =
-set statusline +=%1*\ %n\ %*   " buffer number
 set statusline +=%3*%y%*       " file type
 set statusline +=%4*\ %<%f%*   " full path
 set statusline +=%2*%m%*       " modified flag
@@ -104,18 +108,14 @@ function! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-autocmd BufWritePre *.yml,*.js,*.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.yml,*.js,*.rb,*.json :call <SID>StripTrailingWhitespaces()
 
 " ========== Plugins ==========================================================
 
-" plugin management
-execute pathogen#infect()
-execute pathogen#helptags()
-
 " markdown
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-" autocmd FileType markdown setlocal syntax=off " disable syntax
-" autocmd FileType markdown match none
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd FileType markdown setlocal syntax=off " disable syntax
+autocmd FileType markdown match none
 let g:instant_markdown_autostart = 0          " disable autostart
 nnoremap <leader>md :InstantMarkdownPreview<CR>
 
