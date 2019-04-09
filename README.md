@@ -6,6 +6,11 @@ cd ~
 git clone --bare git@github.com:jgplane/dotfiles.git
 dotfiles config status.showUntrackedFiles no
 ```
+Set up vim folder structure:
+```
+mkdir ~/.vim/swaps
+mkdir ~/.vim/backups
+```
 
 __Sources__
 
