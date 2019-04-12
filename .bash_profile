@@ -20,7 +20,7 @@ alias ll='ls -hA1'      # Preferred 'ls' implementation
 
 # Tmuxinator
 alias txk='tmux kill-session'
-alias tcc='tmuxinator coverhound-commercial'
+alias tcc='rbenv shell 2.5.1 && tmuxinator coverhound-commercial'
 alias txr='tmuxinator retrolux'
 alias txrm='tmuxinator retrolux-mobile'
 
