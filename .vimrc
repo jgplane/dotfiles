@@ -23,6 +23,8 @@ set number
 :au WinEnter * :setlocal number
 :au WinLeave * :setlocal nonumber
 
+:au BufRead, BufNewFile *.txt setlocal wrap
+
 " automatically resize vertical splits.
 " :au WinEnter * :set winfixheight
 " :au WinEnter * :wincmd =
