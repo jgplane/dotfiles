@@ -7,8 +7,12 @@ execute pathogen#helptags()
 filetype plugin indent on
 syntax on
 set background=dark
-" colo wintermute
-colo gruvbox
+
+try
+  colorscheme wintermute
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme elflord
+endtry
 
 set nocompatible
 set nowrap
@@ -20,17 +24,12 @@ set expandtab                    " tab inserts 4 spaces
 set textwidth  =0                " turn of auto insert new line
 set wrapmargin =0
 set path       =.,**
-
 set cursorline
 
 " always show line numbers, but only in current window.
 set number
 :au WinEnter * :setlocal number
 :au WinLeave * :setlocal nonumber
-
-" automatically resize vertical splits.
-" :au WinEnter * :set winfixheight
-" :au WinEnter * :wincmd =
 
 " status line
 set laststatus =2              " always show status line
@@ -63,6 +62,14 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+nnoremap <silent> <leader>e :Vexplore<CR>
+
 " ========== Keybindings ======================================================
 
 nnoremap ;             :
@@ -74,7 +81,6 @@ inoremap jj            <Esc>
 
 nnoremap <silent> <leader>] :cnext<CR>
 nnoremap <silent> <leader>[ :cprevious<CR>
-
 nnoremap <silent> <leader>t :CtrlP<CR>
 
 " disable arrow keys
@@ -82,12 +88,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-" uncomment temporarily to learn better navigation 
-" noremap h <Nop>
-" noremap j <Nop>
-" noremap k <Nop>
-" noremap l <Nop>
 
 " keymap for resizing split windows
 map <left> :5winc ><CR>
@@ -114,14 +114,11 @@ autocmd BufWritePre *.yml,*.js,*.rb,*.json :call <SID>StripTrailingWhitespaces()
 
 " markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd FileType markdown setlocal syntax=off " disable syntax
-autocmd FileType markdown match none
-let g:instant_markdown_autostart = 0          " disable autostart
-nnoremap <leader>md :InstantMarkdownPreview<CR>
+" autocmd FileType markdown setlocal syntax=off " disable syntax
+" autocmd FileType markdown match none
 
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
-set conceallevel=2
 
 " easy align 
 xmap ga <Plug>(EasyAlign)
