@@ -4,12 +4,16 @@
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
+# Always surround non-printing commands with \[ \]
+export PS1='\[\n\] \[\e[1;36m\] ● \W $ \[\e[0m\]'
+
 ################################################################################
 #                                    ALIASES                                   #
 ################################################################################
 
 # Defaults
 alias yardoc="yardoc 'app/**/*.rb' -c --private --protected"
+alias vim="/usr/local/bin/vim"
 
 # Movement
 alias cd..='cd ../'     # Go back 1 directory level 
