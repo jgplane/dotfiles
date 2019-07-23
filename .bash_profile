@@ -5,7 +5,11 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 # Always surround non-printing commands with \[ \]
-export PS1='\[\n\] \[\e[1;36m\] ● \W $ \[\e[0m\]'
+export PS1='\n\[\e[1;36m\]● \W $ \[\e[0m\]'
+
+# git auto-completion with tab
+# $_ refers to last argument to prev command
+test -f ~/.git-completion.bash && . $_
 
 ################################################################################
 #                                    ALIASES                                   #
