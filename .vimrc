@@ -70,7 +70,7 @@ let g:netrw_winsize = 15
 " =============================================================================
 
 " LEADER
-nnoremap <leader>e     :vexplore<CR>
+nnoremap <leader>e     :Vexplore<CR>
 nnoremap <leader>f     :find<SPACE>
 nnoremap <leader>gb    :vert term ++close git blame %<CR>
 nnoremap <leader>gg    :vert term git grep -hiIn --break --heading<SPACE>
@@ -153,4 +153,5 @@ set runtimepath^=~/.vim/bundle/vimwiki
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:vimwiki_list = [{'path': '~/code_wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown'}
+let g:vimwiki_hl_cb_checked = 2
 
