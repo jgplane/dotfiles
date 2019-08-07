@@ -70,6 +70,7 @@ let g:netrw_winsize = 15
 " =============================================================================
 
 " LEADER
+" normal
 nnoremap <leader>e     :Vexplore<CR>
 nnoremap <leader>f     :find<SPACE>
 nnoremap <leader>gb    :vert term ++close git blame %<CR>
@@ -78,22 +79,24 @@ nnoremap <leader>n     :cnext<CR>
 nnoremap <leader>p     :cprev<CR>
 nnoremap <leader>say   :call SayHighlighting()<CR>
 nnoremap <leader>t     :vimgrep //g ./**/*<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
+" visual
+xnoremap <leader>s     :sort<CR>
 
 " generate vimrc headers
 map == :call FillLine('A=')<CR>
 map -- :call FillLine('A-')<CR>
 
 " disable arrow keys
-noremap <left> <Nop>
+noremap <left>  <Nop>
 noremap <right> <Nop>
-noremap <down> <Nop>
-noremap <up> <Nop>
+noremap <down>  <Nop>
+noremap <up>    <Nop>
 
 " resizing split windows
-map <left>  :5winc ><CR>
-map <right> :5winc <<CR>
-map <down>  :5winc +<CR>
-map <up>    :5winc -<CR>
+noremap <left>  :5winc ><CR>
+noremap <right> :5winc <<CR>
+noremap <down>  :5winc +<CR>
+noremap <up>    :5winc -<CR>
 
 " go to file under cursor
 nnoremap <ENTER> gf
