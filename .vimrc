@@ -26,7 +26,6 @@ set number
 :au WinEnter * :setlocal number
 :au WinLeave * :setlocal nonumber
 
-" status line
 set laststatus =2                         " always show status line
 set noruler                               " remove ruler
 set statusline =
@@ -38,7 +37,6 @@ set statusline +=%1*/%L%*                 " total lines
 set statusline +=%1*\ ::
 set statusline +=%1*%2v\ %*               " virtual column number
 
-" wild
 set wildmenu
 set wildmode=list
 set wildignorecase
@@ -57,7 +55,6 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
-" netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
@@ -71,6 +68,7 @@ let g:netrw_winsize = 15
 
 " LEADER
 " normal
+nnoremap <leader>b     80\|bi<CR><ESC>0
 nnoremap <leader>e     :Vexplore<CR>
 nnoremap <leader>f     :find<SPACE>
 nnoremap <leader>gb    :vert term ++close git blame %<CR>
@@ -93,10 +91,10 @@ noremap <down>  <Nop>
 noremap <up>    <Nop>
 
 " resizing split windows
-noremap <left>  :5winc ><CR>
-noremap <right> :5winc <<CR>
-noremap <down>  :5winc +<CR>
-noremap <up>    :5winc -<CR>
+nnoremap <left>  :5winc ><CR>
+nnoremap <right> :5winc <<CR>
+nnoremap <down>  :5winc +<CR>
+nnoremap <up>    :5winc -<CR>
 
 " go to file under cursor
 nnoremap <ENTER> gf
@@ -117,32 +115,32 @@ nnoremap <BS>          <C-O>
 " =============================================================================
 
 " tell me the syntax highlighting group at the cursor
-function! SayHighlighting()
+fu! SayHighlighting()
   echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
     \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
     \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
-endfunction
+endf
 
-function! FillLine(char)
-  exec 'norm '.(79 - strlen(getline('.'))).a:char
-endfunction
+fu! FillLine(char)
+  exe 'norm '.(79 - strlen(getline('.'))).a:char
+endf
 
-function! <SID>StripTrailingWhitespaces()
+fu! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
   %s/\s\+$//e
-  call cursor(l, c)
-endfun
-autocmd BufWritePre *.yml,*.js,*.rb,*.json :call <SID>StripTrailingWhitespaces()
+  cal cursor(l, c)
+endf
+au BufWritePre *.yml,*.js,*.rb,*.json,*.vim :call <SID>StripTrailingWhitespaces()
 
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
+fu! GitBranch()
+  retu system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endf
 
-function! StatuslineGit()
+fu! StatuslineGit()
   let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  ⎇  '.l:branchname.' ':''
-endfunction
+  retu strlen(l:branchname) > 0?'  ⎇  '.l:branchname.' ':''
+endf
 
 
 " =============================================================================
