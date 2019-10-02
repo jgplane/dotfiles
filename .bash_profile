@@ -112,3 +112,20 @@ export CH_USER="jack.plane@coverhound.com"
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# deploy to coverhound staging
+function des() {
+  mybranch=$(parse_git_branch)
+  if [ -z "$mybranch" ]
+  then
+    echo "Please enter server name and make sure you're in a git repo"
+  else
+    echo "Deploying $mybranch to $1 staging server"
+    echo "Executing: branch=$mybranch bundle exec cap $1 deploy"
+    branch=$mybranch bundle exec cap $1 deploy
+  fi
+}
+
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
