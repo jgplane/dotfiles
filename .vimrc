@@ -72,7 +72,7 @@ inoremap jj            <Esc>
 
 nnoremap <silent> <leader>] :cnext<CR>
 nnoremap <silent> <leader>[ :cprevious<CR>
-
+nnoremap <silent> <leader>' :call RemoveCurlyQuotes()<CR> 
 nnoremap <silent> <leader>t :CtrlP<CR>
 
 " disable arrow keys
@@ -108,6 +108,13 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre *.yml,*.js,*.rb :call <SID>StripTrailingWhitespaces()
 
+function! RemoveCurlyQuotes()
+  %s/”/"/g
+  %s/“/"/g
+  %s/’/'/g
+  %s/‘/'/g
+endfun
+
 " ========== Plugins ==========================================================
 
 " plugin management
@@ -134,7 +141,17 @@ nnoremap <Leader>gg :Ggrep<Space>
 nnoremap <Leader>gb :Gblame<CR>
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/code_wiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+let simple_write_wiki = {}
+let simple_write_wiki.path = '~/.simple_write'
+let simple_write_wiki.syntax = "markdown"
+let simple_write_wiki.ext = '.md'
+let simple_write_wiki.index = 'README'
+let simple_write_wiki.diary_rel_path = '/journal'
+let simple_write_wiki.diary_index = 'journal'
+let simple_write_wiki.diary_header = 'Journal'
+
+let g:vimwiki_list = [simple_write_wiki]
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_ext2syntax = {'.md': 'markdown'}
 
