@@ -109,10 +109,10 @@ endfun
 autocmd BufWritePre *.yml,*.js,*.rb :call <SID>StripTrailingWhitespaces()
 
 function! RemoveCurlyQuotes()
-  %s/”/"/g
-  %s/“/"/g
-  %s/’/'/g
-  %s/‘/'/g
+  sil! %s/”/"/g
+  sil! %s/“/"/g
+  sil! %s/’/'/g
+  sil! %s/‘/'/g
 endfun
 
 " ========== Plugins ==========================================================
@@ -151,7 +151,16 @@ let simple_write_wiki.diary_rel_path = '/journal'
 let simple_write_wiki.diary_index = 'journal'
 let simple_write_wiki.diary_header = 'Journal'
 
-let g:vimwiki_list = [simple_write_wiki]
+let captains_log_wiki = {}
+let captains_log_wiki.path = '~/.captains_log'
+let captains_log_wiki.syntax = "markdown"
+let captains_log_wiki.ext = '.md'
+let captains_log_wiki.index = 'README'
+let captains_log_wiki.diary_rel_path = 'journal'
+let captains_log_wiki.diary_index = 'journal'
+let captains_log_wiki.diary_header = 'Journal'
+
+let g:vimwiki_list = [simple_write_wiki, captains_log_wiki]
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_ext2syntax = {'.md': 'markdown'}
 
