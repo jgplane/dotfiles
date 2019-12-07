@@ -160,7 +160,16 @@ let captains_log_wiki.diary_rel_path = 'journal'
 let captains_log_wiki.diary_index = 'journal'
 let captains_log_wiki.diary_header = 'Journal'
 
-let g:vimwiki_list = [simple_write_wiki, captains_log_wiki]
+let life_log_wiki = {}
+let life_log_wiki.path = '~/.life_log'
+let life_log_wiki.syntax = "markdown"
+let life_log_wiki.ext = '.md'
+let life_log_wiki.index = 'README'
+let life_log_wiki.diary_rel_path = 'journal'
+let life_log_wiki.diary_index = 'journal'
+let life_log_wiki.diary_header = 'Journal'
+
+let g:vimwiki_list = [simple_write_wiki, captains_log_wiki, life_log_wiki]
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_ext2syntax = {'.md': 'markdown'}
 
