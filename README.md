@@ -38,8 +38,6 @@ dotfiles checkout --patch coverhound .vimrc
 
 __Sources__
 
-[Elliot Jackson's Screencast](https://www.youtube.com/watch?v=awtfkl50bUQ)
-
-[Guide Based on Hackernews Question](https://news.ycombinator.com/item?id=11070797)
-
-[Similar Guide for Bitbucket](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+- [Elliot Jackson's Screencast](https://www.youtube.com/watch?v=awtfkl50bUQ)
+- [Guide Based on Hackernews Question](https://news.ycombinator.com/item?id=11070797)
+- [Similar Guide for Bitbucket](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
