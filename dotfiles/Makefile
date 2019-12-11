@@ -14,7 +14,6 @@ mac:
 		git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle/vimwiki -q;\
 	fi
 
-	@WINTERMUTE=~/.vim/colors/wintermute.vim
 	@if [[ ! -f  ~/.vim/colors/wintermute.vim ]]; then\
 		curl -s -S https://raw.githubusercontent.com/jgplane/wintermute/master/wintermute.vim  \
   --output ~/.vim/colors/wintermute.vim;\
