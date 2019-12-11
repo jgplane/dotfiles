@@ -21,7 +21,10 @@ Double check that you won't be overwriting anything important (in .bash_profile,
 ```shell
 cd ~
 git clone --bare git@github.com:jgplane/dotfiles.git ~/.dotfiles
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+dotfiles checkout -- .
 dotfiles config status.showUntrackedFiles no
+source ~/.bash_profile
 ```
 
 Create a new branch in this repo for the machine. This allows me to keep machine-specific configurations separated.
