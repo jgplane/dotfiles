@@ -20,6 +20,3 @@ source ~/.vim/config/vimwiki.vim
 " VIMWIKI
 " whitelist the wikis used on this workspace--for example:
 "   let g:vimwiki_list = []
-let g:vimwiki_list = [code_wiki]
-
-filetype plugin indent on
