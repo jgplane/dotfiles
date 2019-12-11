@@ -20,7 +20,7 @@ Install dependencies:
 Double check that you won't be overwriting anything important (in .bash_profile, et al)
 ```shell
 cd ~
-git clone --bare git@github.com:jgplane/dotfiles.git
+git clone --bare git@github.com:jgplane/dotfiles.git ~/.dotfiles
 dotfiles config status.showUntrackedFiles no
 ```
 
