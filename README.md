@@ -1,33 +1,20 @@
 ## Setting Up a New Machine
 
-Install dependencies:
-- git
-- vim
-  - [wintermute colorscheme](https://github.com/jgplane/wintermute)
-  - vimwiki
-    ```shell
-    cd ~/.vim
-    mkdir bundle
-    cd bundle
-    git clone https://github.com/vimwiki/vimwiki.git
-    ```
-  - `mkdir ~/.vim/swaps`
-  - `mkdir ~/.vim/backups`
-  - install vimwikis from private repos
-- tmux
-- tmuxinator
-
-Double check that you won't be overwriting anything important (in .bash_profile, et al)
-```shell
-cd ~
-git clone --bare git@github.com:jgplane/dotfiles.git ~/.dotfiles
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-dotfiles checkout -- .
-dotfiles config status.showUntrackedFiles no
-source ~/.bash_profile
-```
-
-Create a new branch in this repo for the machine. This allows me to keep machine-specific configurations separated.
+- Double check that you won't be overwriting anything important (in .bash_profile, et al)
+  ```shell
+  cd ~
+  git clone --bare git@github.com:jgplane/dotfiles.git ~/.dotfiles
+  alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+  dotfiles checkout -- .
+  dotfiles config status.showUntrackedFiles no
+  source ~/.bash_profile
+  ```
+- Set everything up:
+  ```shell
+  cd ~/dotfiles
+  make mac
+  ```
+- Create a new branch named after the computer to keep machine-specific configurations separated
 
 ## Making Changes
 
