@@ -23,4 +23,3 @@ source ~/.vim/config/vimwiki.vim
 let g:vimwiki_list = [code_wiki]
 
 filetype plugin indent on
-
