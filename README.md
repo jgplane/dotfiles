@@ -20,7 +20,7 @@ cd bundle
 git clone https://github.com/vimwiki/vimwiki.git
 ```
 
-Create a new branch in this repo for the machine. This allows us to keep machine-specific configurations separated.
+Create a new branch in this repo for the machine. This allows me to keep machine-specific configurations separated.
 
 __Making Changes__
 
