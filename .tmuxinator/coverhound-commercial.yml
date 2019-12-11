@@ -1,0 +1,12 @@
+name: coverhound-commercial
+root: ~/src/commercial
+
+startup_window: shell
+
+windows:
+  - web: HOT_RELOADING=TRUE bundle exec rails s -p 3000
+  - sidekiq: bundle exec sidekiq
+  - client-hot: sh -c 'rm -rf public/business-insurance/webpack || true && yarn run hot-assets'
+  - console: rails c
+  - shell: git branch
+  - vim: vim .

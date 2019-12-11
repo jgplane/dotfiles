@@ -1,0 +1,11 @@
+name: coverhound-hspp
+root: ~/src/home-systems-protection
+
+startup_window: shell
+
+windows:
+  - server: foreman start
+  - sidekiq: bundle exec sidekiq
+  - console: rails c
+  - shell: git branch
+  - vim: vim .
