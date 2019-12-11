@@ -1,0 +1,29 @@
+# Open vim with the system Ruby version, then switch back to prior version.
+# Avoids error with Command-T vim plugin
+function sv() {
+  current_version=($(rvm current))
+  rvm use system ; vim & rvm use $current_version && fg
+}
+
+# NOTE: only works for code_wiki vimwiki
+#
+# Takes one argument from command line and returns the vim-wiki diary entries
+# that match.
+#
+# Examples:
+#   $ worked_on RCD-1939
+#   $ worked_on "broken tests"
+function worked_on() {
+  paths=(`egrep -lir "($1)" ~/code_wiki/diary`)
+  echo '---'
+  sortedpaths=($(echo ${paths[*]}| tr " " "\n" | sort -n -r))
+
+  for i in "${sortedpaths[@]}"
+  do 
+    file="$(basename $i)"
+    echo "${file%.*}"
+  done
+  echo '---'
+}
+
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
