@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo "  Downloading Github Repos"
+
+if [[ ! -f ~/.ssh/id_rsa ]]; then
+  ssh-keygen -t rsa -b 4096 -C "jgplane@gmail.com"
+    eval "$(ssh-agent -s)"
+  ssh-add -K ~/.ssh/id_rsa
+  pbcopy < ~/.ssh/id_rsa.pub
+  echo "New key copied to your clipboard"
+  read -p "Add key to https://github.com/settings/keys, then press enter to continue"
+fi
+
+if [[ ! -d  ~/.code_wiki ]]; then
+  git clone git@github.com:jgplane/code-wiki.git ~/.code_wiki -q
+  echo "    Cloned code_wiki"
+fi
+
+if [[ ! -d  ~/.simple_write ]]; then
+  git clone git@github.com:jgplane/simple_write.git ~/.simple_write -q
+  echo "    Cloned simple_write"
+fi
+
+if [[ ! -d  ~/.captains_log ]]; then
+  git clone git@github.com:jgplane/captains_log.git ~/.captains_log -q
+  echo "    Cloned captains_log"
+fi
+
+echo "    Done"
