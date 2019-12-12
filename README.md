@@ -11,8 +11,7 @@
   ```
 - Set everything up:
   ```shell
-  cd ~/dotfiles
-  make mac
+  sh ~/dotfiles/setup/mac
   ```
 - Create a new branch named after the computer to keep machine-specific configurations separated
 
