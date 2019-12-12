@@ -1,0 +1,44 @@
+#!/bin/bash
+
+echo "  Setting Up Images"
+
+mkdir -p ~/dotfiles/images
+
+if [[ ! -f  ~/dotfiles/images/hubble_cluster.jpg ]]; then
+  curl --silent --show-error https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001777/GSFC_20171208_Archive_e001777~orig.jpg \
+    > ~/dotfiles/images/hubble_cluster.jpg
+fi
+
+if [[ ! -f  ~/dotfiles/images/horsehead.jpg ]]; then
+  curl --silent --show-error https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001518/GSFC_20171208_Archive_e001518~orig.jpg \
+    > ~/dotfiles/images/horsehead.jpg
+fi
+
+if [[ ! -f  ~/dotfiles/images/starburst.jpg ]]; then
+  curl --silent --show-error https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002049/GSFC_20171208_Archive_e002049~orig.jpg \
+    > ~/dotfiles/images/starburst.jpg
+fi
+
+if [[ ! -f  ~/dotfiles/images/jupiter-tan-blue.jpg ]]; then
+  curl --silent --show-error https://images-assets.nasa.gov/image/PIA21973/PIA21973~orig.jpg \
+    > ~/dotfiles/images/jupiter-tan-blue.jpg
+fi
+
+if [[ ! -f  ~/dotfiles/images/jupiter-blue-tan.jpg ]]; then
+  curl --silent --show-error https://images-assets.nasa.gov/image/PIA22935/PIA22935~orig.jpg \
+    > ~/dotfiles/images/jupiter-blue-tan.jpg
+fi
+
+if [[ ! -f  ~/dotfiles/images/jupiter-blues.jpg ]]; then
+  curl --silent --show-error https://images-assets.nasa.gov/image/PIA21972/PIA21972~orig.jpg \
+    > ~/dotfiles/images/jupiter-blues.jpg
+fi
+
+# Set desktop image
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  echo "FIXME: add linux desktop setting"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/dotfiles/images/hubble_cluster.jpg"'
+fi
+
+echo "    Done"

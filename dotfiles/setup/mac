@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo Setting Up Mac
+
+REL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+sh ""$REL_DIR"/images"
+sh ""$REL_DIR"/vim"
+sh ""$REL_DIR"/github"
+
+echo Done
