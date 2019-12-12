@@ -1,3 +1,10 @@
+Benefits of this dotfiles setup:
+- no extra tooling
+- no symlinks
+- version controlled
+- different branches for different computers
+- easy new computer set up
+
 ## Setting Up a New Machine
 
 - Double check that you won't be overwriting anything important (in .bash_profile, et al)
@@ -5,6 +12,7 @@
   cd ~
   git clone --bare git@github.com:jgplane/dotfiles.git ~/.dotfiles
   alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+  dotfiles pull
   dotfiles checkout -- .
   dotfiles config status.showUntrackedFiles no
   source ~/.bash_profile
