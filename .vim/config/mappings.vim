@@ -3,7 +3,7 @@
 nnoremap <leader>b     80\|bi<CR><ESC>0
 nnoremap <leader>e     :Vexplore<CR>
 nnoremap <leader>f     :find<SPACE>
-nnoremap <leader>gb    :vert term ++close git blame %<CR>
+nnoremap <leader>gb    :vert term git blame %<CR>
 nnoremap <leader>gg    :vert term git grep -hiIn --break --heading<SPACE>
 nnoremap <leader>n     :cnext<CR>
 nnoremap <leader>p     :cprev<CR>
@@ -40,6 +40,4 @@ nnoremap gb :ls<CR>:b<Space>
 nnoremap ;             :
 inoremap jj            <Esc>
 nnoremap <BS>          <C-O>
-
-
 
