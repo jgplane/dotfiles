@@ -15,9 +15,15 @@ fi
 if [[ -f  ~/.vim/colors/wintermute.vim ]]; then
   rm ~/.vim/colors/wintermute.vim
 fi
-
 curl -s -S https://raw.githubusercontent.com/jgplane/wintermute/master/wintermute.vim \
   --output ~/.vim/colors/wintermute.vim;\
 echo "    Refreshed wintermute"
+
+if [[ -f  ~/.vim/colors/cyberdeck.vim ]]; then
+  rm ~/.vim/colors/cyberdeck.vim
+fi
+curl -s -S https://raw.githubusercontent.com/jgplane/cyberdeck/master/cyberdeck.vim \
+  --output ~/.vim/colors/cyberdeck.vim;\
+echo "    Refreshed cyberdeck"
 
 echo "    Done"
