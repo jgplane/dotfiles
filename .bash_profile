@@ -48,3 +48,12 @@ function parse_git_branch() {
 alias tcc='rbenv shell 2.5.1 && tmuxinator coverhound-commercial'
 alias txh='rbenv shell 2.5.1 && tmuxinator coverhound-hspp'
 
+function term_colors() {
+  for i in {0..255} ; do
+    printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
+    if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
+      printf "\n";
+    fi
+  done
+}
+
