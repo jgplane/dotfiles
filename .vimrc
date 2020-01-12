@@ -22,5 +22,14 @@ source ~/.vim/config/vimwiki.vim
 "   let g:vimwiki_list = []
 let g:vimwiki_list = [simple_write_wiki, captains_log_wiki, life_log_wiki]
 
+function! RemoveCurlyQuotes()
+  sil! %s/”/"/g
+  sil! %s/“/"/g
+  sil! %s/’/'/g
+  sil! %s/‘/'/g
+endfun
 nnoremap <silent> <leader>' :call RemoveCurlyQuotes()<CR> 
 nnoremap <silent> <leader>t :CtrlP<CR>
+
+filetype plugin indent on
+
