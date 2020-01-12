@@ -5,12 +5,6 @@ echo "  Setting Up Vim"
 mkdir -p ~/.vim/swaps
 mkdir -p ~/.vim/backups
 mkdir -p ~/.vim/colors
-mkdir -p ~/.vim/bundle
-
-if [[ ! -d  ~/.vim/bundle/vimwiki ]]; then
-  git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle/vimwiki -q
-  echo "    Cloned vimwiki"
-fi
 
 if [[ -f  ~/.vim/colors/wintermute.vim ]]; then
   rm ~/.vim/colors/wintermute.vim
