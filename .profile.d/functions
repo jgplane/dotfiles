@@ -14,7 +14,7 @@ function sv() {
 #   $ worked_on RCD-1939
 #   $ worked_on "broken tests"
 function worked_on() {
-  paths=(`egrep -lir "($1)" ~/code_wiki/diary`)
+  paths=(`egrep -lir "($1)" $PWD`)
   echo '---'
   sortedpaths=($(echo ${paths[*]}| tr " " "\n" | sort -n -r))
 
