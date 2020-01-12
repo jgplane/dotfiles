@@ -37,7 +37,7 @@ If you need to merge just one file from a branch into another, you can like this
 dotfiles checkout --patch coverhound .vimrc
 ```
 
-## Reference
+## Starting from Scratch
 
 - [Elliot Jackson's Screencast](https://www.youtube.com/watch?v=awtfkl50bUQ)
 - [Guide Based on Hackernews Question](https://news.ycombinator.com/item?id=11070797)
