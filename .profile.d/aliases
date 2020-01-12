@@ -1,6 +1,3 @@
-# Defaults
-alias vim="/usr/local/bin/vim"
-
 # Movement
 alias cd..='cd ../'     # Go back 1 directory level 
 alias ..='cd ../'       # Go back 1 directory level
