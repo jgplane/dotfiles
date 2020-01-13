@@ -15,7 +15,7 @@ fu! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   cal cursor(l, c)
 endf
-au BufWritePre *.yml,*.js,*.rb,*.json,*.vim :call <SID>StripTrailingWhitespaces()
+au BufWritePre *.topo,*.nab,*.snap,*.yml,*.js,*.rb,*.json,*.vim :call <SID>StripTrailingWhitespaces()
 
 fu! GitBranch()
   retu system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
