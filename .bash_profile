@@ -39,3 +39,9 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+alias vim="/usr/local/bin/vim"
+
+# Load the default .profile
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+
