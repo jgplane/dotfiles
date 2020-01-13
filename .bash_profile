@@ -57,3 +57,8 @@ function term_colors() {
   done
 }
 
+alias vim="/usr/local/bin/vim"
+
+# Load the default .profile
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+
