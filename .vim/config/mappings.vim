@@ -9,6 +9,7 @@ nnoremap <leader>n     :cnext<CR>
 nnoremap <leader>p     :cprev<CR>
 nnoremap <leader>say   :call SayHighlighting()<CR>
 nnoremap <leader>t     :vimgrep //g ./**/*<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
+nnoremap <leader>w     :set wrap linebreak nolist
 " visual
 xnoremap <leader>s     :sort<CR>
 
