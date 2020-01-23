@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language: Snap
+" Language: SNAP
 " Maintainer: Jack Plane
 
 if exists("b:current_syntax")
@@ -16,3 +16,4 @@ syn match SnapTextTrail '\V\^\s\s\s'
 syn match SnapTextTodo  '\V\^\S\so'
 syn match SnapTextDone  '\V\^\S\sx'
 
+syn match SnapEmphasis  '\V`\+\.\+`\+'
