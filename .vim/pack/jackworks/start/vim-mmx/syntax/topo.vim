@@ -8,13 +8,12 @@ endif
 
 let b:current_syntax = "topo"
 
-syn match TopoTitle   '\V\^-\s\s\S'
-syn match TopoHeader  '\V\^=\s\s\S'
-syn match TopoList    '\V\^+\s\s\S'
-syn match TopoNorm    '\V\^.\s\s\S'
-syn match TopoQuote   '\V\^|\s\s\S'
-syn match TopoComment '\V\^/\s\s\S'
-" FIXME: this needs to check for '_\n'
-" syn match TopoLine    '\V\^_\s\s\S'
-syn match TopoCode    '\V\^#\s\s\S'
+syn region TopoTitle   start=/^\+- /  end=/^\+[-=+.|/#] /me=s-1
+syn region TopoHeader  start=/^\+= /  end=/^\+[-=+.|/#] /me=s-1
+syn region TopoQuote   start=/^\+| /  end=/^\+[-=+.|/#] /me=s-1
+syn region TopoComment start=/^\+\/ / end=/^\+[-=+.|/#] /me=s-1
+syn region TopoCode    start=/^\+# /  end=/^\+[-=+.|/#] /me=s-1
+
+syn match TopoEmender   '\V{\.\+}'
+syn match TopoEmphasis  '\V`\+\.\+`\+'
 
