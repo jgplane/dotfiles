@@ -1,3 +1,6 @@
+# "Murder, Death, Kill" for "A server is already running"
+alias mdk='kill -9 $(lsof -i tcp:3000 -t)'
+
 # Movement
 alias cd..='cd ../'     # Go back 1 directory level 
 alias ..='cd ../'       # Go back 1 directory level
