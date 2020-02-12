@@ -42,3 +42,12 @@ dotfiles checkout --patch coverhound .vimrc
 - [Elliot Jackson's Screencast](https://www.youtube.com/watch?v=awtfkl50bUQ)
 - [Guide Based on Hackernews Question](https://news.ycombinator.com/item?id=11070797)
 - [Similar Guide for Bitbucket](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+
+## Troubleshooting
+
+__Can't checkout remote branches__
+```bash
+dotfiles config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+dotfiles pull
+```
+
