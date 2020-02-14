@@ -27,3 +27,4 @@ nnoremap <silent> <leader>t :CtrlP<CR>
 
 filetype plugin indent on
 
+nnoremap <silent> <leader>d :r!date +\%s<CR>
