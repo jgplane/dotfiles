@@ -4,7 +4,7 @@ syntax on
 set background=dark
 
 try
-  colorscheme wintermute
+  colorscheme sprawl
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme elflord
 endtry
