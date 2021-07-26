@@ -7,6 +7,10 @@ Benefits of this dotfiles setup:
 
 ## Setting Up a New Machine
 
+- Zsh is the new default shell on MacOS. To switch to Bash, run:
+  ```shell
+  chsh -s /bin/bash
+  ```
 - Double check that you won't be overwriting anything important (in .bash_profile, et al)
   ```shell
   cd ~
